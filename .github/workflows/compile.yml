@@ -1,0 +1,23 @@
+name: Build and run
+
+on: [push]
+
+strategy:
+  matrix:
+    compiler: [gcc, clang]
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Compile
+      env:
+        CC: ${{ matrix.compiler }}
+      run: make hello
+
+    - uses: actions/checkout@v1
+    - name: Run
+      run: ./hello
+      
