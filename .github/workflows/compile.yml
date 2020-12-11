@@ -16,5 +16,5 @@ jobs:
       env:
         CC: ${{ matrix.compiler }}
       run: |
-        $CC hello
+        $CC hello.c -o hello
         ./hello
