@@ -7,8 +7,7 @@ jobs:
 
     runs-on: ubuntu-18.04
     strategy:
-      matrix:
-        compiler: [gcc, clang]
+      compiler: gcc
 
     steps:
     - uses: actions/checkout@v1
