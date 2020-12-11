@@ -12,9 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Compile
+    - name: Compile and run
       env:
         CC: ${{ matrix.compiler }}
       run: |
-        make hello
+        ${{ CC }} hello
         ./hello
