@@ -15,8 +15,6 @@ jobs:
     - name: Compile
       env:
         CC: ${{ matrix.compiler }}
-      run: make hello
-
-    - uses: actions/checkout@v1
-    - name: Run
-      run: ./hello
+      run: |
+        make hello
+        ./hello
