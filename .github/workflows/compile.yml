@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        compiler: [gcc, clang]
+        compiler: [gcc]
 
     steps:
     - uses: actions/checkout@v2
     - name: Compile and run
       env:
-        CC: ${{ matrix.compiler }}
+        compiler_name: ${{ matrix.compiler }}
       run: |
-        $CC hello.c -o hello
+        $compiler_name hello.c -o hello
         ./hello
