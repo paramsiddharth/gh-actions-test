@@ -1,15 +1,11 @@
 name: Build and run
-
 on: [push]
-
 jobs:
   build:
-
     runs-on: ubuntu-20.04
     strategy:
       matrix:
         compiler: [gcc]
-
     steps:
     - uses: actions/checkout@v2
     - name: Compile and run
