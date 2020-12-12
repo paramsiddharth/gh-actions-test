@@ -7,7 +7,6 @@ jobs:
       matrix:
         compiler: [gcc]
     steps:
-    - uses: actions/checkout@v2
     - name: Compile and run
       env:
         compiler_name: ${{ matrix.compiler }}
